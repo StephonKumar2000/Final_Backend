@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Campus, Student } = require("../db/models");
 
-// (localhost:8080)/api/student/
 router.get("/", async (req, res, next) => {
 	console.log("req.query" + req.query);
 	try {
@@ -12,7 +11,6 @@ router.get("/", async (req, res, next) => {
 		next(error);
 	}
 });
-// (localhost:8080)/api/student/:id
 router.get("/:id", async (req, res, next) => {
 	console.log("req.query.id" + req.query.id);
 	try {
@@ -31,7 +29,6 @@ router.get("/:id", async (req, res, next) => {
 		next(error);
 	}
 });
-// localhost:8080/api/student/campus/:id
 router.get("/campus/:id", async (req, res, next) => {
 	try {
 		const studentsByCampus = await Student.findAll({
@@ -45,7 +42,6 @@ router.get("/campus/:id", async (req, res, next) => {
 		next(error);
 	}
 });
-// (localhost:8080)/api/student/
 router.post("/", async (req, res, next) => {
 	console.log("req.body" + req.body);
 	try {
@@ -56,7 +52,6 @@ router.post("/", async (req, res, next) => {
 		next(error);
 	}
 });
-// (localhost:8080)/api/student/:id
 router.put("/:id", async (req, res, next) => {
 	try {
 		let student = await Student.findByPk(req.params.id);
@@ -80,7 +75,6 @@ router.put("/:id", async (req, res, next) => {
 		next(error);
 	}
 });
-// (localhost:8080)/api/student/:id/delete
 router.delete("/:id/delete", async (req, res, next) => {
 	try {
         const student = await Student.findByPk(req.params.id);
