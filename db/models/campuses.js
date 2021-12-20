@@ -19,7 +19,7 @@ const Campus = db.define("campus", {
 	},
 	imageUrl: {
 		type: Sequelize.TEXT,
-		defaultValue: "https://www.brooklyn.cuny.edu/web/com_homepage_2020/BrooklynCollegeLibrary_220x140.jpg",
+		defaultValue: "https://sdmny.hunter.cuny.edu/wp-content/uploads/2019/01/hunter-college-logo.png",
 	},
 	address: {
 		type: Sequelize.STRING,
@@ -29,7 +29,7 @@ const Campus = db.define("campus", {
 	},
 	description: {
         type: Sequelize.TEXT,
-        defaultValue : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a purus maximus, fermentum erat sed.`
+        defaultValue : ``
 	},
 });
 
