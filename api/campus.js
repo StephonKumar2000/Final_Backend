@@ -14,7 +14,6 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
-//get specific campus with students path api/campus/:id
 router.get("/:id", async (req, res, next) => {
 	try {
 		const campus = await Campus.findAll({
@@ -30,7 +29,6 @@ router.get("/:id", async (req, res, next) => {
 	}
 });
 
-//get specific campus with students path api/campus/nostudent/:id
 router.get("/nostudent/:id", async (req, res, next) => {
 	try {
 		const campus = await Campus.findByPk(req.params.id);
@@ -42,7 +40,6 @@ router.get("/nostudent/:id", async (req, res, next) => {
 		next(error);
 	}
 });
-//post a campus  path api/campus/campus
 router.post("/", async (req, res, next) => {
 	try {
         console.log(req.body);
@@ -55,7 +52,6 @@ router.post("/", async (req, res, next) => {
 	}
 });
 
-// update campus info path api/campus/:id
 router.put("/:id", async (req, res, next) => {
 	try {
 		let campus = await Campus.findByPk(req.params.id);
@@ -78,7 +74,6 @@ router.put("/:id", async (req, res, next) => {
 		next(error);
 	}
 });
-// delete campus path api/campus/:id/delete
 router.get("/:id/delete", async (req, res, next) => {
 	try {
         const campus = await Campus.findByPk(req.params.id);
